@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Google Drive</title>
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../lib/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../lib/handlebars.js"></script>
+        <script type="text/javascript" src="../lib/ZohoEmbededAppSDK.min.js"></script>
+        <script type="text/javascript" src="../js/handler.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {                
+                /*
+                * initialize widget with config data
+                */
+
+                /*
+                ZOHO.embeddedApp.on("DialerActive", function() {
+                    console.log("dialer Active");
+                })
+                ZOHO.embeddedApp.on("Dial", Handler.initiateCall)
+                */
+
+                ZOHO.embeddedApp.on("PageLoad", function(data) {
+                    ZOHO.CRM.CONNECTOR.authorize(Handler.MetaSpec.connectorName)
+                })
+                
+                ZOHO.embeddedApp.init().then(function() {
+                    
+                })
+
+                /*
+                ZOHO.embeddedApp.on("PageLoad", function(data) {
+                    // Handler.getRecordId(data);
+                    Handler.Session.Entity = data.Entity;
+                    Handler.Session.EntityId = data.EntityId;
+                    console.log(Handler.Session.Entity);
+                    console.log(Handler.Session.EntityId);
+                    Handler.entityPageLoad;
+                })
+
+                $("#widgetsDiv").on("click", ".toggle-icons", function() {
+                    
+                    var ele = $(this);
+                    if (ele.hasClass("blueTxt")) {
+                        ele.removeClass("blueTxt")
+                    } else {
+                        ele.addClass("blueTxt")
+                    }
+                });
+                
+                ZOHO.embeddedApp.init().then(function() {
+                    Handler.widgetInit();
+                })
+                */
+                    
+            });
+        </script>
+    </head>
+    <body style="background: #f2f2f2;padding-bottom:100px;">
+
+    </body>
+</html>
